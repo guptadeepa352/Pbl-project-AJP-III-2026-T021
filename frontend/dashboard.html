@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Secure Cloud Storage account dashboard.">
+    <title>Dashboard · Secure Cloud Storage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/encryption.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+    <script src="js/file-manager.js" defer></script>
+</head>
+<body class="dashboard-page" data-page="dashboard">
+    <header class="site-header dashboard-header">
+        <a class="brand" href="dashboard.html" aria-label="Secure Cloud Storage dashboard">
+            <span class="brand-mark" aria-hidden="true">S</span>
+            <span>Secure Cloud Storage</span>
+        </a>
+        <div class="dashboard-actions">
+            <span class="account-email" data-account-email aria-label="Signed-in account"></span>
+            <button class="button button-secondary button-small" type="button" data-logout>Log out</button>
+        </div>
+    </header>
+    <main class="dashboard-main">
+        <section class="dashboard-welcome">
+            <p class="eyebrow"><span class="status-dot"></span> Your private workspace</p>
+            <h1>Welcome, <span data-user-name>there</span></h1>
+            <p class="dashboard-intro">Upload, manage and securely retrieve your encrypted files.</p>
+            <div class="form-message" data-message role="status" aria-live="polite" hidden></div>
+        </section>
+
+        <section class="dashboard-panel" aria-labelledby="storage-title">
+            <div class="panel-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48" focusable="false">
+                    <path d="M8 15.5h13l3.5 4H40v15a3 3 0 0 1-3 3H11a3 3 0 0 1-3-3z"></path>
+                    <path d="M8 15.5v-3a3 3 0 0 1 3-3h9l3.5 4H37a3 3 0 0 1 3 3v3"></path>
+                </svg>
+            </div>
+            <div class="panel-copy">
+                <p class="eyebrow">Encrypted file storage</p>
+                <h2 id="storage-title">Upload a file securely</h2>
+                <p>Your browser encrypts the file before sending ciphertext to the API. Use a separate encryption secret, not your account password. Losing it means the file cannot be decrypted.</p>
+            </div>
+            <span class="coming-soon">Up to 10 MiB per file</span>
+        </section>
+
+        <section class="account-panel upload-panel" aria-labelledby="upload-title">
+            <div class="account-panel-heading">
+                <div>
+                    <p class="eyebrow">Client-side encryption</p>
+                    <h2 id="upload-title">Upload encrypted file</h2>
+                </div>
+            </div>
+            <form data-upload-form novalidate>
+                <label class="field">
+                    <span>Choose a file (up to 10 MiB)</span>
+                    <input data-file-input name="file" type="file" required>
+                </label>
+                <label class="field">
+                    <span>File-encryption secret</span>
+                    <input data-encryption-secret name="encryptionSecret" type="password"
+                           autocomplete="new-password" minlength="12" required>
+                    <span class="field-hint">Separate from your login password. It is used only in this browser for encryption/decryption and is never sent to the server.</span>
+                </label>
+                <button class="button" type="submit" data-upload-submit>
+                    <span class="button-spinner" data-upload-spinner aria-hidden="true" hidden></span>
+                    <span data-upload-label>Encrypt and upload</span>
+                </button>
+                <div class="form-message" data-upload-message role="status"
+                     aria-live="polite" hidden></div>
+            </form>
+        </section>
+
+        <section class="account-panel files-panel" aria-labelledby="files-title">
+            <div class="account-panel-heading">
+                <div>
+                    <p class="eyebrow">Private to your account</p>
+                    <h2 id="files-title">Your files</h2>
+                </div>
+                <button class="button button-secondary button-small" type="button"
+                        data-refresh-files>
+                    <span class="button-spinner" data-refresh-spinner aria-hidden="true" hidden></span>
+                    <span data-refresh-label>Refresh</span>
+                </button>
+            </div>
+            <p class="file-list-message" data-file-list-message role="status" aria-live="polite">
+                Loading your files…
+            </p>
+            <ul class="file-list" data-file-list></ul>
+        </section>
+
+        <section class="account-panel" aria-labelledby="account-title">
+            <div class="account-panel-heading">
+                <div>
+                    <p class="eyebrow">Your details</p>
+                    <h2 id="account-title">Account</h2>
+                </div>
+                <span class="account-badge">Signed in</span>
+            </div>
+            <dl class="account-details">
+                <div>
+                    <dt>Email address</dt>
+                    <dd data-profile-email><span class="inline-spinner" aria-hidden="true"></span> Loading account…</dd>
+                </div>
+                <div>
+                    <dt>Authentication</dt>
+                    <dd>JWT bearer token</dd>
+                </div>
+                <div>
+                    <dt>Session storage</dt>
+                    <dd>This browser tab only</dd>
+                </div>
+            </dl>
+        </section>
+    </main>
+    <footer class="site-footer dashboard-footer">
+        <span>Secure Cloud Storage</span>
+        <span>Client-side encryption · Private by account</span>
+    </footer>
+</body>
+</html>

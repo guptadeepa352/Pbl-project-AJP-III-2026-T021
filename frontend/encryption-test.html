@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Browser-only Web Crypto encryption self-test.">
+    <title>Encryption self-test · Secure Cloud Storage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/encryption.js" defer></script>
+    <script src="js/encryption-test.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Secure Cloud Storage home">
+            <span class="brand-mark" aria-hidden="true">S</span>
+            <span>Secure Cloud Storage</span>
+        </a>
+    </header>
+    <main class="home-main">
+        <section class="hero">
+            <p class="eyebrow">Browser-only verification</p>
+            <h1>Encryption <span class="text-accent">self-test</span></h1>
+            <p class="hero-copy">
+                Checks AES-256-GCM encryption/decryption, wrong-secret rejection,
+                ciphertext and authentication-tag tampering, and fresh random
+                salt and IV generation using only the Web Crypto API.
+            </p>
+            <div class="notice" role="status" aria-live="polite">
+                <span class="notice-icon" aria-hidden="true">i</span>
+                <p data-test-result>Running browser self-test…</p>
+            </div>
+            <ul data-test-details aria-live="polite"></ul>
+            <p class="hero-copy">
+                The test uses a temporary fixture and a dedicated test secret.
+                It does not call the backend or display plaintext, secret, or key.
+            </p>
+        </section>
+    </main>
+</body>
+</html>

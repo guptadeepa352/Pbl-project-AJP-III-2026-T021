@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A secure cloud storage project in active development.">
+    <title>Secure Cloud Storage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/auth.js" defer></script>
+</head>
+<body data-page="home">
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Secure Cloud Storage home">
+            <span class="brand-mark" aria-hidden="true">S</span>
+            <span>Secure Cloud Storage</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="nav-link" href="login.html">Sign in</a>
+            <a class="button button-small" href="register.html">Create account</a>
+        </nav>
+    </header>
+
+    <main class="home-main">
+        <section class="hero">
+            <p class="eyebrow"><span class="status-dot"></span> MCA final-year project</p>
+            <h1>Your files.<br><span class="text-accent">Your privacy.</span></h1>
+            <p class="hero-copy">
+                Keep your files organized and private with a cloud storage
+                workspace that encrypts file contents in your browser.
+            </p>
+            <div class="hero-actions">
+                <a class="button" href="register.html">Create your account <span aria-hidden="true">→</span></a>
+                <a class="button button-secondary" href="login.html">Sign in</a>
+            </div>
+            <div class="notice" role="note">
+                <span class="notice-icon" aria-hidden="true">i</span>
+                <p><strong>Encryption stays in your browser.</strong> Your file secret is never sent to the storage service. Keep it safe: it is required to decrypt your files.</p>
+            </div>
+        </section>
+
+        <section class="feature-grid" aria-label="Project principles">
+            <article class="feature-card">
+                <span class="feature-number">01</span>
+                <h2>Private by design</h2>
+                <p>Files are encrypted in your browser before the encrypted content is uploaded.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-number">02</span>
+                <h2>Account security</h2>
+                <p>Passwords are hashed with BCrypt. Login uses expiring bearer tokens.</p>
+            </article>
+            <article class="feature-card">
+                <span class="feature-number">03</span>
+                <h2>Built in phases</h2>
+                <p>A focused academic project exploring practical cloud storage security.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>Secure Cloud Storage</span>
+        <span>Academic project · Development preview</span>
+    </footer>
+</body>
+</html>

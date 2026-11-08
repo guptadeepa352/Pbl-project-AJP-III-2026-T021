@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Create a Secure Cloud Storage account.">
+    <title>Create account · Secure Cloud Storage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/auth.js" defer></script>
+</head>
+<body class="auth-page" data-page="register">
+    <header class="site-header auth-header">
+        <a class="brand" href="index.html" aria-label="Secure Cloud Storage home">
+            <span class="brand-mark" aria-hidden="true">S</span>
+            <span>Secure Cloud Storage</span>
+        </a>
+        <a class="nav-link" href="index.html">Project overview</a>
+    </header>
+    <main class="auth-main">
+        <section class="auth-card" aria-labelledby="page-title">
+            <a class="back-link" href="index.html">← Project overview</a>
+            <p class="eyebrow">Secure Cloud Storage · MCA project</p>
+            <h1 id="page-title">Create your account</h1>
+            <p class="auth-intro">Set up your account to manage your privately encrypted files.</p>
+
+            <div class="form-message" data-message role="status" aria-live="polite" hidden></div>
+            <form data-auth-form novalidate>
+                <label class="field">
+                    <span>Full name</span>
+                    <input name="name" type="text" autocomplete="name" maxlength="100"
+                           placeholder="Your name" required>
+                </label>
+                <label class="field">
+                    <span>Email address</span>
+                    <input name="email" type="email" autocomplete="email" maxlength="254"
+                           placeholder="you@example.com" required>
+                </label>
+                <label class="field">
+                    <span>Password</span>
+                    <input name="password" type="password" autocomplete="new-password"
+                           maxlength="72" aria-describedby="password-help" required>
+                    <span class="field-hint" id="password-help">
+                        At least 12 characters, with uppercase, lowercase, number, and symbol.
+                    </span>
+                </label>
+                <button class="button button-full" type="submit" data-submit>
+                    <span data-submit-label>Create account</span>
+                    <span aria-hidden="true">→</span>
+                </button>
+            </form>
+            <p class="auth-switch">Already registered? <a href="login.html">Sign in</a></p>
+            <p class="auth-footnote">Your account password is protected with BCrypt. File encryption uses a separate secret.</p>
+        </section>
+    </main>
+    <footer class="site-footer auth-footer">
+        <span>Secure Cloud Storage</span>
+        <span>Client-side encrypted file storage</span>
+    </footer>
+</body>
+</html>

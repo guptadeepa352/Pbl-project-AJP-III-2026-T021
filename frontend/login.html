@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sign in to Secure Cloud Storage.">
+    <title>Sign in · Secure Cloud Storage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/auth.js" defer></script>
+</head>
+<body class="auth-page" data-page="login">
+    <header class="site-header auth-header">
+        <a class="brand" href="index.html" aria-label="Secure Cloud Storage home">
+            <span class="brand-mark" aria-hidden="true">S</span>
+            <span>Secure Cloud Storage</span>
+        </a>
+        <a class="nav-link" href="index.html">Project overview</a>
+    </header>
+    <main class="auth-main">
+        <section class="auth-card" aria-labelledby="page-title">
+            <a class="back-link" href="index.html">← Project overview</a>
+            <p class="eyebrow">Secure Cloud Storage · MCA project</p>
+            <h1 id="page-title">Welcome back</h1>
+            <p class="auth-intro">Sign in to securely access your files and account workspace.</p>
+
+            <div class="form-message" data-message role="status" aria-live="polite" hidden></div>
+            <form data-auth-form novalidate>
+                <label class="field">
+                    <span>Email address</span>
+                    <input name="email" type="email" autocomplete="email" maxlength="254"
+                           placeholder="you@example.com" required>
+                </label>
+                <label class="field">
+                    <span>Password</span>
+                    <input name="password" type="password" autocomplete="current-password"
+                           maxlength="1024" placeholder="Enter your password" required>
+                </label>
+                <button class="button button-full" type="submit" data-submit>
+                    <span data-submit-label>Sign in</span>
+                    <span aria-hidden="true">→</span>
+                </button>
+            </form>
+            <p class="auth-switch">New to Secure Cloud Storage? <a href="register.html">Create an account</a></p>
+            <p class="auth-footnote">Your session is kept in this browser tab and cleared when you sign out.</p>
+        </section>
+    </main>
+    <footer class="site-footer auth-footer">
+        <span>Secure Cloud Storage</span>
+        <span>Client-side encrypted file storage</span>
+    </footer>
+</body>
+</html>
