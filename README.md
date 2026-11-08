@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Secure Cloud Storage
 
 An MCA final-year project exploring secure cloud file storage through
@@ -415,3 +416,6 @@ authentication-tag tampering locally.
 - [System architecture, encryption, authentication, and security model](docs/architecture.md)
 - [REST API reference](docs/api-documentation.md)
 - [Database, setup, Docker, AWS, and operations](docs/development-and-operations.md)
+=======
+# Pbl-project-AJP-III-2026-T021
+>>>>>>> 7449b2e0326f194207856d15032918ba3f281631
